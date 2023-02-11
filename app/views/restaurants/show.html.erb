@@ -1,0 +1,146 @@
+<style>
+    .container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+
+    .c1,
+    .c2,
+    .c3 {
+        width: 100%;
+    }
+
+    @media (min-width: 600px) {
+        .c1 {
+            width: 40%;
+            -webkit-order: 2;
+            order: 2;
+        }
+
+        .c2 {
+            width: 60%;
+            -webkit-order: 1;
+            order: 1;
+        }
+
+        .c3 {
+            width: 100%;
+            -webkit-order: 3;
+            order: 3;
+        }
+    }
+
+
+    @media (min-width: 800px) {
+        .c2 {
+            width: 25%;
+        }
+
+        .c1 {
+            width: 50%;
+        }
+
+        .c3 {
+            width: 25%;
+        }
+    }
+</style>
+
+<h2>レストラン詳細</h2>
+
+<div class="container mb-4 mt-5" role="main">
+    <div class="c1 card p-3">
+        <% if @restaurant.image.attached? %>
+        <%= image_tag @restaurant.image, class:"w-100" %>
+        <% end %>
+        <div class="card-body">
+            <h3 class="card-title">
+                <%= @restaurant.name %>
+            </h3>
+            <p class="card-text">
+                <strong>レストランのアドレス:</strong>
+                <%= @restaurant.addresss %>
+            </p>
+            <p class="card-text">
+                <strong>詳細:</strong>
+                <%= @restaurant.detail %>
+            </p>
+            <p class="card-text">
+                <strong>評価:</strong>
+                <%= @average_review %>
+            </p>
+
+            <%= link_to '編集' , edit_restaurant_path(@restaurant), class:"btn btn-primary" %> |
+            <%= link_to '戻る' , restaurants_path, class:"btn btn-warning" %> |
+
+        </div>
+    </div>
+
+    <div class="c2 p-3">
+        <h3>フード一覧</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>フード名</th>
+                    <th>値段</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @restaurant.foods.each do |food| %>
+                <tr>
+                    <td>
+                        <%= link_to food.name, restaurant_food_path(@restaurant, food) %>
+                    </td>
+                    <td>
+                        <%= food.price %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <%= link_to "Add food", new_restaurant_food_path(@restaurant), class:"btn btn-warning" %>
+    </div>
+
+    <div class="c3 p-3">
+        <h3>レビュー</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>評価</th>
+                    <th>レビュー</th>
+                </tr>
+            </thead>
+
+             <% @restaurant.restaurant_reviews.each do |review| %>
+                <tr>
+                    <td>
+                        <%= review.user.id %>
+                    </td>
+                    <td>
+                        <%= review.rating %>
+                    </td>
+                    <td>
+                        <%= review.review %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+        <% found = 0 %>
+        <% @restaurant.restaurant_reviews.each do |review| %>
+            <% if review.user_id == current_user.id %>
+                <%= link_to '編集', edit_restaurant_restaurant_review_path(@restaurant, review), class:"btn btn-warning" %>
+                <%= link_to '削除', [@restaurant, review],:method => :delete, class:"btn btn-danger" %> 
+                <% found = 1 %>
+            <% end %>
+        <% end %>
+        <% if found == 0 %>
+            <%= link_to '作成', new_restaurant_restaurant_review_path(@restaurant), class:"btn btn-success" %> 
+        <% end %>
+    </div>
+</div>
