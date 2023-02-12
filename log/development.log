@@ -5527,3 +5527,1244 @@ Processing by FoodsController#new as HTML
 Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 1.4ms | Allocations: 8851)
 
 
+Started GET "/restaurants/1/foods/new" for 127.0.0.1 at 2023-02-12 16:40:45 +0000
+Processing by FoodsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (Duration: 3.2ms | Allocations: 1604)
+  Rendered foods/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1953)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 1225)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.3ms | Allocations: 8922)
+
+
+Started GET "/restaurants/1/foods/new" for 127.0.0.1 at 2023-02-12 16:47:09 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FoodsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (Duration: 4.4ms | Allocations: 1514)
+  Rendered foods/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 1252)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.6ms | Allocations: 8850)
+
+
+Started POST "/restaurants/1/foods" for 127.0.0.1 at 2023-02-12 16:48:57 +0000
+Processing by FoodsController#create as HTML
+  Parameters: {"authenticity_token"=>"OGaqKdcqUN4/rmEuq1iGldZgpUznAjRDawbh4aOpNNkhR4pKfCPPuLC5XEWiub54fYc+2/uHnCFPYgxntWo3WA==", "food"=>{"name"=>"bún cá ", "price"=>"30000", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000000044cedd0 @tempfile=#<Tempfile:/tmp/RackMultipart20230212-894-150pwvr.jpeg>, @original_filename="bunca.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"food[image]\"; filename=\"bunca.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Cá giòn, ngon, bổ, gia vị ổn :>"}, "commit"=>"生成", "restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mFood Create (1.8ms)[0m  [1m[32mINSERT INTO "foods" ("name", "description", "created_at", "updated_at", "restaurant_id", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "bún cá "], ["description", "Cá giòn, ngon, bổ, gia vị ổn :>"], ["created_at", "2023-02-12 16:48:57.367045"], ["updated_at", "2023-02-12 16:48:57.367045"], ["restaurant_id", 1], ["price", "30000"]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "tycg5oeg3xe0tk9jz8glaf8xhulr"], ["filename", "bunca.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 10094], ["checksum", "T0PJtubDzEGvnNzNFsOAxw=="], ["created_at", "2023-02-12 16:48:57.386737"]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Food"], ["record_id", 2], ["blob_id", 5], ["created_at", "2023-02-12 16:48:57.389205"]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[36mFood Update (0.1ms)[0m  [1m[33mUPDATE "foods" SET "updated_at" = ? WHERE "foods"."id" = ?[0m  [["updated_at", "2023-02-12 16:48:57.391125"], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/foods_controller.rb:29:in `block in create'
+[36m  Disk Storage (2.3ms) [0m[32mUploaded file to key: tycg5oeg3xe0tk9jz8glaf8xhulr (checksum: T0PJtubDzEGvnNzNFsOAxw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 63e9c6bf-eee6-4514-be84-395c015a41ce) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007f8a0434cb60 @uri=#<URI::GID gid://project/ActiveStorage::Blob/5>>
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/restaurants/1
+Completed 302 Found in 72ms (ActiveRecord: 8.4ms | Allocations: 21190)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce] Performing ActiveStorage::AnalyzeJob (Job ID: 63e9c6bf-eee6-4514-be84-395c015a41ce) from Async(active_storage_analysis) enqueued at 2023-02-12T16:48:57Z with arguments: #<GlobalID:0x00007f8a04316b28 @uri=#<URI::GID gid://project/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: tycg5oeg3xe0tk9jz8glaf8xhulr[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce]   [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [63e9c6bf-eee6-4514-be84-395c015a41ce] Performed ActiveStorage::AnalyzeJob (Job ID: 63e9c6bf-eee6-4514-be84-395c015a41ce) from Async(active_storage_analysis) in 21.96ms
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 16:48:57 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.4ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 5306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered layouts/_alert.html.erb (Duration: 0.8ms | Allocations: 103)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 30ms (Views: 19.6ms | ActiveRecord: 1.8ms | Allocations: 14079)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 16:48:57 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjUzOjU3Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9f707d7394c2c088fce09119f7287cf6deee2cdb/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjUzOjU3Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9f707d7394c2c088fce09119f7287cf6deee2cdb/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1802)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjUzOjU3Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9f707d7394c2c088fce09119f7287cf6deee2cdb/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 16:48:58 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjUzOjU3Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9f707d7394c2c088fce09119f7287cf6deee2cdb", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:49:00 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:41
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 997)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.6ms | Allocations: 8460)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:49:00 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU0OjAwLjc0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--111f316b5836b913ab9af14eb595bc23680bee2a/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU0OjAwLjc0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--111f316b5836b913ab9af14eb595bc23680bee2a/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1786)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU0OjAwLjc0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--111f316b5836b913ab9af14eb595bc23680bee2a/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:49:00 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU0OjAwLjc0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--111f316b5836b913ab9af14eb595bc23680bee2a", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 16:49:16 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4569)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 16.4ms | ActiveRecord: 0.9ms | Allocations: 12287)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:50:21 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:41
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2242)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.7ms | Allocations: 7995)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:53:42 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:41
+  Rendered foods/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2459)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.7ms | Allocations: 9936)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:53:43 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU4OjQzLjcyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9c5fe12a64e5e74bd5cc42bebabd6912909973a8/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU4OjQzLjcyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9c5fe12a64e5e74bd5cc42bebabd6912909973a8/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 1777)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU4OjQzLjcyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9c5fe12a64e5e74bd5cc42bebabd6912909973a8/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:53:43 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE2OjU4OjQzLjcyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9c5fe12a64e5e74bd5cc42bebabd6912909973a8", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:56:27 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:47
+  Rendered foods/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2455)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.4ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 116)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 0.6ms | Allocations: 9911)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:56:28 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAxOjI4LjI3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--93bf46ae00111f14ea08e8aa64f7886bd69d0828/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAxOjI4LjI3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--93bf46ae00111f14ea08e8aa64f7886bd69d0828/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1776)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAxOjI4LjI3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--93bf46ae00111f14ea08e8aa64f7886bd69d0828/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:56:28 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAxOjI4LjI3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--93bf46ae00111f14ea08e8aa64f7886bd69d0828", "filename"=>"bunca"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:58:58 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:49
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:50
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 24ms (Views: 13.0ms | ActiveRecord: 0.5ms | Allocations: 9952)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:58:59 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAzOjU5LjEwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0dfc97a0e68297cc390d99083554d0ac3ca24557/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAzOjU5LjEwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0dfc97a0e68297cc390d99083554d0ac3ca24557/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1785)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAzOjU5LjEwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0dfc97a0e68297cc390d99083554d0ac3ca24557/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:58:59 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjAzOjU5LjEwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0dfc97a0e68297cc390d99083554d0ac3ca24557", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 16:59:30 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:25
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:26
+  Rendered foods/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2437)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 9894)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:59:31 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA0OjMxLjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--adbbde21968fa104f0920dfa2749259f84015036/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA0OjMxLjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--adbbde21968fa104f0920dfa2749259f84015036/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1783)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA0OjMxLjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--adbbde21968fa104f0920dfa2749259f84015036/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 16:59:31 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA0OjMxLjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--adbbde21968fa104f0920dfa2749259f84015036", "filename"=>"bunca"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:00:06 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:25
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:26
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.6ms | Allocations: 9910)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:00:07 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjA3LjEwNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7de459320587deb33bbcb35f39c0935e86fb7d6f/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjA3LjEwNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7de459320587deb33bbcb35f39c0935e86fb7d6f/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1772)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjA3LjEwNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7de459320587deb33bbcb35f39c0935e86fb7d6f/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:00:07 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjA3LjEwNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7de459320587deb33bbcb35f39c0935e86fb7d6f", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:00:54 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:26
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:27
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.5ms | Allocations: 9928)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:00:56 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjU2LjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e74b0dfc29c43f24b59022d2137a3a1af4afa654/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjU2LjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e74b0dfc29c43f24b59022d2137a3a1af4afa654/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1781)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjU2LjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e74b0dfc29c43f24b59022d2137a3a1af4afa654/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:00:56 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA1OjU2LjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e74b0dfc29c43f24b59022d2137a3a1af4afa654", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:01:39 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 9908)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:01:40 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA2OjQwLjUwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99c0bd0fd77e72297119fbc2209ba77d971368b3/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA2OjQwLjUwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99c0bd0fd77e72297119fbc2209ba77d971368b3/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1782)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA2OjQwLjUwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99c0bd0fd77e72297119fbc2209ba77d971368b3/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:01:40 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA2OjQwLjUwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99c0bd0fd77e72297119fbc2209ba77d971368b3", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:02:00 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:33
+  Rendered foods/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 9894)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:02:01 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjAxLjQyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2f1e63d8d0aaaec0cfc70d2ac8f3417e7b41c922/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjAxLjQyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2f1e63d8d0aaaec0cfc70d2ac8f3417e7b41c922/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1787)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjAxLjQyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2f1e63d8d0aaaec0cfc70d2ac8f3417e7b41c922/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:02:01 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjAxLjQyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2f1e63d8d0aaaec0cfc70d2ac8f3417e7b41c922", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:02:21 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:33
+  Rendered foods/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 1227)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 1.0ms | Allocations: 9948)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:02:22 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjIyLjQzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46244eb49924603525f5a712897d5ef59946836e/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjIyLjQzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46244eb49924603525f5a712897d5ef59946836e/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1785)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjIyLjQzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46244eb49924603525f5a712897d5ef59946836e/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:02:22 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA3OjIyLjQzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46244eb49924603525f5a712897d5ef59946836e", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:03:10 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:33
+  Rendered foods/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 117)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 0.7ms | Allocations: 9927)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:03:11 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA4OjExLjA5OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96c398027e0d4e2c90b4031eb0b2f4c21025cfbb/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA4OjExLjA5OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96c398027e0d4e2c90b4031eb0b2f4c21025cfbb/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1785)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA4OjExLjA5OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96c398027e0d4e2c90b4031eb0b2f4c21025cfbb/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:03:11 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjA4OjExLjA5OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96c398027e0d4e2c90b4031eb0b2f4c21025cfbb", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:05:05 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:33
+  Rendered foods/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2443)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1227)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 117)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 9910)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:05:06 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjA2LjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1306f682699a9aa2ac7ee99c083fe5ae5fca9928/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjA2LjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1306f682699a9aa2ac7ee99c083fe5ae5fca9928/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1779)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjA2LjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1306f682699a9aa2ac7ee99c083fe5ae5fca9928/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:05:06 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjA2LjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1306f682699a9aa2ac7ee99c083fe5ae5fca9928", "filename"=>"bunca"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:05:15 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 5247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 13.9ms | ActiveRecord: 0.9ms | Allocations: 13636)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 17:05:15 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjE1LjkzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--041d348e5215ed75b2bb1d5bd7c43d7ff854e484/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjE1LjkzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--041d348e5215ed75b2bb1d5bd7c43d7ff854e484/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1795)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjE1LjkzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--041d348e5215ed75b2bb1d5bd7c43d7ff854e484/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:05:16 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjEwOjE1LjkzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--041d348e5215ed75b2bb1d5bd7c43d7ff854e484", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:06:10 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 5243)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 346)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 117)
+Completed 200 OK in 31ms (Views: 21.3ms | ActiveRecord: 1.1ms | Allocations: 14701)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 17:06:12 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjEyLjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32078dd652c9a7df79a11e6339688d9ca32ceb20/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjEyLjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32078dd652c9a7df79a11e6339688d9ca32ceb20/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1801)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjEyLjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32078dd652c9a7df79a11e6339688d9ca32ceb20/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:06:12 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjEyLjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32078dd652c9a7df79a11e6339688d9ca32ceb20", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 369)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:06:24 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 5242)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 346)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 117)
+Completed 200 OK in 34ms (Views: 23.5ms | ActiveRecord: 1.2ms | Allocations: 14681)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 17:06:25 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1791)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:06:25 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:06:45 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 4570)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 15.7ms | ActiveRecord: 1.2ms | Allocations: 12315)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:06:45 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjExOjI1LjQ1MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--61bc28397ed34db9caf71b1bf8cc86ec89558827", "filename"=>"Artboard 1"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/restaurants/1/foods/new" for 127.0.0.1 at 2023-02-12 17:07:00 +0000
+Processing by FoodsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (Duration: 3.4ms | Allocations: 1512)
+  Rendered foods/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 996)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 7744)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:09:08 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 5243)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 347)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 0.9ms | Allocations: 14699)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:09:56 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 346)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 31ms (Views: 22.1ms | ActiveRecord: 1.1ms | Allocations: 14710)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 17:09:57 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE0OjU3LjIyNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--da61ee736a3ec667ad07d26c3ada11946ee82a84/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE0OjU3LjIyNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--da61ee736a3ec667ad07d26c3ada11946ee82a84/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1803)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE0OjU3LjIyNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--da61ee736a3ec667ad07d26c3ada11946ee82a84/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:09:57 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE0OjU3LjIyNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--da61ee736a3ec667ad07d26c3ada11946ee82a84", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/restaurants/1/foods/new" for 127.0.0.1 at 2023-02-12 17:10:14 +0000
+Processing by FoodsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (Duration: 3.3ms | Allocations: 1512)
+  Rendered foods/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 996)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 7767)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:10:30 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4571)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 12299)
+
+
+Started GET "/restaurants/1/foods/1" for 127.0.0.1 at 2023-02-12 17:10:30 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"1"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:33
+  Rendered foods/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 997)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 8331)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:10:31 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: ho4wf1ew5sgk8ingtpaf0z0rbs4v (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTU6MzEuMDg1WiIsInB1ciI6ImJsb2Jfa2V5In19--774b742b794c9c9b4feba421ac7437ff30ee0140/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTU6MzEuMDg1WiIsInB1ciI6ImJsb2Jfa2V5In19--774b742b794c9c9b4feba421ac7437ff30ee0140/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1783)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTU6MzEuMDg1WiIsInB1ciI6ImJsb2Jfa2V5In19--774b742b794c9c9b4feba421ac7437ff30ee0140/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:10:31 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cole-keister-UP3pjHKx0ts-unsplash.resized.jpg\"; filename*=UTF-8''cole-keister-UP3pjHKx0ts-unsplash.resized.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTU6MzEuMDg1WiIsInB1ciI6ImJsb2Jfa2V5In19--774b742b794c9c9b4feba421ac7437ff30ee0140", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started GET "/restaurants/1/foods/1" for 127.0.0.1 at 2023-02-12 17:11:26 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"1"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:38
+  Rendered foods/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2451)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 0.8ms | Allocations: 9942)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:11:27 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: ho4wf1ew5sgk8ingtpaf0z0rbs4v (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6MjcuNDA1WiIsInB1ciI6ImJsb2Jfa2V5In19--485bfa64cbde87be1a572302a59c22ea41baced6/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6MjcuNDA1WiIsInB1ciI6ImJsb2Jfa2V5In19--485bfa64cbde87be1a572302a59c22ea41baced6/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1790)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6MjcuNDA1WiIsInB1ciI6ImJsb2Jfa2V5In19--485bfa64cbde87be1a572302a59c22ea41baced6/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:11:27 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cole-keister-UP3pjHKx0ts-unsplash.resized.jpg\"; filename*=UTF-8''cole-keister-UP3pjHKx0ts-unsplash.resized.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6MjcuNDA1WiIsInB1ciI6ImJsb2Jfa2V5In19--485bfa64cbde87be1a572302a59c22ea41baced6", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/restaurants/1/foods/1" for 127.0.0.1 at 2023-02-12 17:11:45 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"1"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:38
+  Rendered foods/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 0.9ms | Allocations: 9938)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:11:46 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: ho4wf1ew5sgk8ingtpaf0z0rbs4v (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6NDYuNzY3WiIsInB1ciI6ImJsb2Jfa2V5In19--979cfd265d6758f99065324f27536be9b14668d2/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6NDYuNzY3WiIsInB1ciI6ImJsb2Jfa2V5In19--979cfd265d6758f99065324f27536be9b14668d2/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1782)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6NDYuNzY3WiIsInB1ciI6ImJsb2Jfa2V5In19--979cfd265d6758f99065324f27536be9b14668d2/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:11:46 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cole-keister-UP3pjHKx0ts-unsplash.resized.jpg\"; filename*=UTF-8''cole-keister-UP3pjHKx0ts-unsplash.resized.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTY6NDYuNzY3WiIsInB1ciI6ImJsb2Jfa2V5In19--979cfd265d6758f99065324f27536be9b14668d2", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 373)
+
+
+Started GET "/restaurants/1/foods/1" for 127.0.0.1 at 2023-02-12 17:12:03 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"1"}
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:38
+  Rendered foods/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1226)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.8ms | Allocations: 9905)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:12:04 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec8a48b63bf8dc8ae2a0340617fe60407651ed2f", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: ho4wf1ew5sgk8ingtpaf0z0rbs4v (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTc6MDQuNzc3WiIsInB1ciI6ImJsb2Jfa2V5In19--05f4257bb3236f7a8f446d5a9c3c0394c1b57ec1/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTc6MDQuNzc3WiIsInB1ciI6ImJsb2Jfa2V5In19--05f4257bb3236f7a8f446d5a9c3c0394c1b57ec1/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1774)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTc6MDQuNzc3WiIsInB1ciI6ImJsb2Jfa2V5In19--05f4257bb3236f7a8f446d5a9c3c0394c1b57ec1/cole-keister-UP3pjHKx0ts-unsplash.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cole-keister-UP3pjHKx0ts-unsplash.resized.jpg%22%3B+filename%2A%3DUTF-8%27%27cole-keister-UP3pjHKx0ts-unsplash.resized.jpg" for 127.0.0.1 at 2023-02-12 17:12:04 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cole-keister-UP3pjHKx0ts-unsplash.resized.jpg\"; filename*=UTF-8''cole-keister-UP3pjHKx0ts-unsplash.resized.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhhRzgwZDJZeFpYYzFjMmRyT0dsdVozUndZV1l3ZWpCeVluTTBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlCcGJteHBibVU3SUdacGJHVnVZVzFsUFNKamIyeGxMV3RsYVhOMFpYSXRWVkF6Y0dwSVMzZ3dkSE10ZFc1emNHeGhjMmd1Y21WemFYcGxaQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiR1V0YTJWcGMzUmxjaTFWVUROd2FraExlREIwY3kxMWJuTndiR0Z6YUM1eVpYTnBlbVZrTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjMtMDItMTJUMTc6MTc6MDQuNzc3WiIsInB1ciI6ImJsb2Jfa2V5In19--05f4257bb3236f7a8f446d5a9c3c0394c1b57ec1", "filename"=>"cole-keister-UP3pjHKx0ts-unsplash.resized"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 349)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:12:19 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.2ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 5247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 46ms (Views: 30.8ms | ActiveRecord: 1.8ms | Allocations: 13632)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2/Artboard%201.png" for 127.0.0.1 at 2023-02-12 17:12:19 +0000
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b835540d7d3f122fed8fbd334b0c84c4f49bd2c2", "filename"=>"Artboard 1"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: b98w5hk5t6w2glrbdgo4dmsvjspn (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1793)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:12:19 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749", "filename"=>"Artboard 1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/restaurants/1/foods/2" for 127.0.0.1 at 2023-02-12 17:12:20 +0000
+Processing by FoodsController#show as HTML
+  Parameters: {"restaurant_id"=>"1", "id"=>"2"}
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:65:in `set_food'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:69:in `find_restaurant'
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Food"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:38
+  Rendered foods/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 997)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 7937)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6/bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:12:20 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db1405fb5b2ebcd6071870c2175c2092a92c8ca6", "filename"=>"bunca"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: tycg5oeg3xe0tk9jz8glaf8xhulr (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjIwLjg1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a53960fe86ab7b0c4003708dfdcf63043e2a19da/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjIwLjg1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a53960fe86ab7b0c4003708dfdcf63043e2a19da/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1776)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjIwLjg1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a53960fe86ab7b0c4003708dfdcf63043e2a19da/bunca.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22bunca.jpeg%22%3B+filename%2A%3DUTF-8%27%27bunca.jpeg" for 127.0.0.1 at 2023-02-12 17:12:21 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"bunca.jpeg\"; filename*=UTF-8''bunca.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkSGxqWnpWdlpXY3plR1V3ZEdzNWFubzRaMnhoWmpoNGFIVnNjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KMWJtTmhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySjFibU5oTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjIwLjg1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a53960fe86ab7b0c4003708dfdcf63043e2a19da", "filename"=>"bunca"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2023-02-12 17:12:26 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurantReview Load (0.1ms)[0m  [1m[34mSELECT "restaurant_reviews".* FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:11:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("restaurant_reviews"."rating") FROM "restaurant_reviews" WHERE "restaurant_reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:55
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:56
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:123
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4550)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 12267)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2023-02-12 17:12:38 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:40
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 19.0ms | ActiveRecord: 0.7ms | Allocations: 9636)
+
+
+Started DELETE "/restaurants/4" for 127.0.0.1 at 2023-02-12 17:12:47 +0000
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NjpJEFweiRjNymsf5iF0uId5SV3wyyMZz0J1Vqv2wisvG2lz9xcWfkLdVnTvwExVLJ7SyuxOi3vrJpjQvTXBqg==", "id"=>"4"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:67:in `set_restaurant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:57:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:57:in `destroy'
+  [1m[36mRestaurant Destroy (1.8ms)[0m  [1m[31mDELETE FROM "restaurants" WHERE "restaurants"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:57:in `destroy'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:57:in `destroy'
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/restaurants
+Completed 302 Found in 19ms (ActiveRecord: 8.6ms | Allocations: 6534)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2023-02-12 17:12:47 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:41
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2792)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 121)
+  Rendered layouts/_alert.html.erb (Duration: 0.4ms | Allocations: 105)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 8326)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749/Artboard%201.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Artboard+1.png%22%3B+filename%2A%3DUTF-8%27%27Artboard%25201.png" for 127.0.0.1 at 2023-02-12 17:12:47 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Artboard 1.png\"; filename*=UTF-8''Artboard%201.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhZams0ZHpWb2F6VjBObmN5WjJ4eVltUm5ielJrYlhOMmFuTndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGeWRHSnZZWEprSURFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCY25SaWIyRnlaQ1V5TURFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIzLTAyLTEyVDE3OjE3OjE5LjMwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a28678f3bae22bec380b410d142be50a6e94a749", "filename"=>"Artboard 1"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2023-02-12 17:12:50 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:35
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Restaurant"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:41
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2804)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 126)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.5ms | Allocations: 8001)
+
+
