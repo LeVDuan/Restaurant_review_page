@@ -1,4 +1,19 @@
-<div style="height:600px">
-    <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary" %>
+<style>
+    .view-food {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .bg-image {
+        height: 300px;
+        background-image: url("../../assets/images/team6.jpg");
+    }
+    
+</style>
+
+<div class="bg-image">
+    <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary view-food" %>
 </div>
 
