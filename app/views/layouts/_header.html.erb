@@ -9,7 +9,7 @@
         <div class="navbar-nav">
             <% if user_signed_in? %>
                 <div class="nav-item dropdown" aria-labelledby="navbarDropdownMenuLink" style="color: white, text-align: right">
-                    <p class="dropdown-item">こんにちは, <%= link_to current_user.name, users_show_path%></p>
+                    <p class="dropdown-item">こんにちは, <span class="text-dark"><%= link_to current_user.name, users_show_path%></span></p>
                     <%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %>
                 </div>
              <% else %>

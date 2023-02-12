@@ -2322,3 +2322,191 @@ ActionView::Template::Error (The asset "auto_click.js" is not present in the ass
     4: </div>
   
 app/views/home_page/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:33:00 +0000
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 1155.9ms | Allocations: 6143)
+Completed 500 Internal Server Error in 1332ms (ActiveRecord: 0.0ms | Allocations: 6593)
+
+
+  
+ActionView::Template::Error (The asset "auto_click.js" is not present in the asset pipeline.
+):
+    1: <div style="height:600px">
+    2:     <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary" %>
+    3:     <%= javascript_include_tag('auto_click.js') %>
+    4: </div>
+  
+app/views/home_page/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:33:06 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 6132)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6575)
+
+
+  
+ActionView::Template::Error (The asset "auto_click.js" is not present in the asset pipeline.
+):
+    1: <div style="height:600px">
+    2:     <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary" %>
+    3:     <%= javascript_include_tag('auto_click.js') %>
+    4: </div>
+  
+app/views/home_page/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:33:07 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 6131)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 6574)
+
+
+  
+ActionView::Template::Error (The asset "auto_click.js" is not present in the asset pipeline.
+):
+    1: <div style="height:600px">
+    2:     <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary" %>
+    3:     <%= javascript_include_tag('auto_click.js') %>
+    4: </div>
+  
+app/views/home_page/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:33:56 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 355.5ms | Allocations: 10143)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 118)
+Completed 200 OK in 561ms (Views: 555.3ms | ActiveRecord: 3.2ms | Allocations: 18507)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:34:13 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.6ms | Allocations: 1214)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.3ms | Allocations: 6487)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:37:03 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1246)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 118)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.3ms | Allocations: 6534)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:39:48 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 1216)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.3ms | Allocations: 6505)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:40:34 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 1223)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.3ms | Allocations: 6506)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2023-02-12 13:41:30 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 316.5ms | Allocations: 17952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 107)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 334ms (Views: 324.2ms | ActiveRecord: 5.0ms | Allocations: 23113)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54883986930ef53cd8704d316a9f42500be6acf8/1.resized.jpg" for 127.0.0.1 at 2023-02-12 13:41:31 +0000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54883986930ef53cd8704d316a9f42500be6acf8", "filename"=>"1.resized"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (51.2ms) [0m[34mGenerated URL for file at key: 0ejajabbdl6ioanw660q6p69bx0c (https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhNR1ZxWVdwaFltSmtiRFpwYjJGdWR6WTJNSEUyY0RZNVluZ3dZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdWNtVnphWHBsWkM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KekV1Y21WemFYcGxaQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjMtMDItMTJUMTM6NDY6MzEuNDg4WiIsInB1ciI6ImJsb2Jfa2V5In19--33f2e976acfac2dc42727a697447f33e112d50c5/1.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%221.resized.jpg%22%3B+filename%2A%3DUTF-8%27%271.resized.jpg)[0m
+Redirected to https://localhost-it-nihongo3-project.paiza-user-free.cloud:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhNR1ZxWVdwaFltSmtiRFpwYjJGdWR6WTJNSEUyY0RZNVluZ3dZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdWNtVnphWHBsWkM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KekV1Y21WemFYcGxaQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjMtMDItMTJUMTM6NDY6MzEuNDg4WiIsInB1ciI6ImJsb2Jfa2V5In19--33f2e976acfac2dc42727a697447f33e112d50c5/1.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%221.resized.jpg%22%3B+filename%2A%3DUTF-8%27%271.resized.jpg
+Completed 302 Found in 68ms (ActiveRecord: 0.2ms | Allocations: 3946)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhNR1ZxWVdwaFltSmtiRFpwYjJGdWR6WTJNSEUyY0RZNVluZ3dZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdWNtVnphWHBsWkM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KekV1Y21WemFYcGxaQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjMtMDItMTJUMTM6NDY6MzEuNDg4WiIsInB1ciI6ImJsb2Jfa2V5In19--33f2e976acfac2dc42727a697447f33e112d50c5/1.resized.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%221.resized.jpg%22%3B+filename%2A%3DUTF-8%27%271.resized.jpg" for 127.0.0.1 at 2023-02-12 13:41:31 +0000
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"1.resized.jpg\"; filename*=UTF-8''1.resized.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhNR1ZxWVdwaFltSmtiRFpwYjJGdWR6WTJNSEUyY0RZNVluZ3dZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdWNtVnphWHBsWkM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KekV1Y21WemFYcGxaQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjMtMDItMTJUMTM6NDY6MzEuNDg4WiIsInB1ciI6ImJsb2Jfa2V5In19--33f2e976acfac2dc42727a697447f33e112d50c5", "filename"=>"1.resized"}
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms | Allocations: 410)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:41:37 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 47)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | Allocations: 986)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.2ms | Allocations: 4700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:41:38 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 982)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 4700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:41:38 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 982)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 4675)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:41:39 +0000
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 3.6ms | Allocations: 996)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms | Allocations: 4689)
+
+
