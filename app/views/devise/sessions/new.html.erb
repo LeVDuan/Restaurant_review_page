@@ -1,4 +1,4 @@
-<div class="card col-10 col-sm-7 col-4">
+<div class="card col-10 col-sm-7 col-4" style="margin: 0 auto;">
     <div class="card-body">
         <h2>Log in</h2>
 
@@ -25,10 +25,12 @@
         </div>
         <% end %>
         </br>
-        <div class="actions">
-            <%= f.submit "Log in", class:"btn btn-primary" %>
+        <div class="field actions">
+            <%= f.submit "Log in", class:"btn btn-primary mb-3" %>
+            <div>
+                <%= render "devise/shared/links" %>
+            </div>
         </div>
-        <%= render "devise/shared/links" %>
         <% end %>
     </div>
 </div>
