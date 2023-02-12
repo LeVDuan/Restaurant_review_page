@@ -7,76 +7,55 @@
 }
 
 .c1, .c2 {
-  width: 100%;
+  width: 800px;
 }
 
-@media (min-width: 600px) {
-  .c1 {
-    width: 50%;
-    -webkit-order: 2;
-    order: 2;
-  }
-
-  .c2 {
-    width: 50%;
-    -webkit-order: 1;
-    order: 1;
-  }
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 1000px;
+    column-gap: 20px;
 }
 
-
-@media (min-width: 800px) {
-  .c1 {
-    width: 60%;
-  }
-  .c2 {
-    width: 40%;
-  }
+.card-body {
+    border-left: 1px solid #ccc;
+    padding-left: 30px;
 }
+
+.food-image {
+    width: 360px;
+    height: 250px;
+}
+
 </style>
-<h1 class="mb-3">Food Show</h1></br>
-<div class="container">
-    <div class="c2 card p-3">
+<div class="center" style="margin: 0 auto;">
+    <h1 class="mb-3">フードの詳細</h1></br>
+    <div class="container">
+    <div class="c2 card p-3  card-row">
         <% if @food.image.attached? %>
-  <%= image_tag @food.image, class:"m-3" %>
-  <% end %>
-  <div class="card-body">
-    <h4 class="card-title"><%= @food.name %></h4>
-    <p class="card-text">
-      <strong>Description:</strong>
-      <%= @food.description %>
-    </p>
-    <p class="card-text">
-        <strong>Price:</strong>
-        <%= @food.price %>
-    </p>
-    
-    <%= link_to 'Edit', edit_restaurant_food_path(@restaurant, @food), class:"btn btn-warning btn-sm" %> |
-    <%= link_to "Delete", [@restaurant, @food], :method  => :delete, class:"btn btn-danger btn-sm" %> |
-    <%= link_to 'Back', restaurant_path(@restaurant), class:"btn btn-secondary btn-sm" %>
-    
-  </div>
-    </div>
-    <div class="c1 p-3">
-        <h3>Comment</h3>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>お名前</th>
-                    <th>Comment</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Duong</td>
-                    <td>asdfsdf</td>
-                </tr>
-            </tbody>
-        </table>
+        <%= image_tag @food.image, class:"m-3 food-image" %>
+        <% end %>
+          <div class="card-body">
+            <h4 class="card-title"><%= @food.name %></h4>
+            <p class="card-text">
+              <strong>説明:</strong>
+              <%= @food.description %>
+            </p>
+            <p class="card-text">
+                <strong>値段:</strong>
+                <%= @food.price %>
+            </p>
+            
+            <%= link_to '編集', edit_restaurant_food_path(@restaurant, @food), class:"btn btn-warning btn-sm" %> |
+            <%= link_to "消す", [@restaurant, @food], :method  => :delete, class:"btn btn-danger btn-sm" %> |
+            <%= link_to '戻る', restaurant_path(@restaurant), class:"btn btn-secondary btn-sm" %>
         
-        <%= link_to "Add comment" %>
+      </div>
     </div>
+    
 </div>
+</div>
+
 
