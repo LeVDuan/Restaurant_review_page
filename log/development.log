@@ -2304,3 +2304,21 @@ Processing by HomePageController#index as HTML
 Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms | Allocations: 4674)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-12 13:26:44 +0000
+  [1m[35m (19.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (33.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomePageController#index as HTML
+  Rendering home_page/index.html.erb within layouts/application
+  Rendered home_page/index.html.erb within layouts/application (Duration: 323.5ms | Allocations: 6718)
+Completed 500 Internal Server Error in 656ms (ActiveRecord: 0.0ms | Allocations: 9512)
+
+
+  
+ActionView::Template::Error (The asset "auto_click.js" is not present in the asset pipeline.
+):
+    1: <div style="height:600px">
+    2:     <%= link_to "レストラン一覧を見る", restaurants_path, class:"btn btn-primary" %>
+    3:     <%= javascript_include_tag('auto_click.js') %>
+    4: </div>
+  
+app/views/home_page/index.html.erb:3
