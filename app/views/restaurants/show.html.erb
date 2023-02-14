@@ -39,7 +39,7 @@
         }
 
         .c1 {
-            width: 50%;
+            width: auto;
         }
 
         .c3 {
@@ -48,12 +48,12 @@
     }
 </style>
 
-<h2>レストラン詳細</h2>
+<h2 style="margin:0 auto">レストラン詳細</h2>
 
 <div class="container mb-4 mt-5" role="main">
     <div class="c1 card p-3">
         <% if @restaurant.image.attached? %>
-        <%= image_tag @restaurant.image, class:"w-100" %>
+        <%= image_tag @restaurant.image, class:"w", style:"width:550px;height:430px" %>
         <% end %>
         <div class="card-body">
             <h3 class="card-title">
@@ -72,8 +72,8 @@
                 <%= @average_review %>
             </p>
 
-            <%= link_to '編集' , edit_restaurant_path(@restaurant), class:"btn btn-primary inline-block mr-3" %> |
-            <%= link_to '戻る' , restaurants_path, class:"btn btn-warning inline-block" %> |
+            <%= link_to '編集' , edit_restaurant_path(@restaurant), class:"btn btn-primary inline-block mr-3", style:"width:100px" %> |
+            <%= link_to '戻る' , restaurants_path, class:"btn btn-warning inline-block", style:"width:100px" %> |
 
         </div>
     </div>
@@ -102,7 +102,7 @@
                 <% end %>
             </tbody>
         </table>
-        <%= link_to "追加", new_restaurant_food_path(@restaurant), class:"btn btn-warning" %>
+        <%= link_to "追加", new_restaurant_food_path(@restaurant), class:"btn btn-warning" , style:"width:100px"%>
     </div>
 
     <div class="c3 p-3">
@@ -140,7 +140,7 @@
             <% end %>
         <% end %>
         <% if found == 0 %>
-            <%= link_to '作成', new_restaurant_restaurant_review_path(@restaurant), class:"btn btn-success" %> 
+            <%= link_to '作成', new_restaurant_restaurant_review_path(@restaurant), class:"btn btn-success", style:"width:100px" %> 
         <% end %>
     </div>
 </div>

@@ -12,7 +12,7 @@
 <% end %>
 
 <div class="field form-group">
-  <%= form.label :レストラン名 %>
+  <%= form.label :レストラン名, style:"text-align:center"%>
   <%= 
       form.text_field :name,
       class: "form-control"
@@ -20,7 +20,7 @@
 </div>
 
 <div class="field form-group">
-  <%= form.label :レストランのアドレス %>
+  <%= form.label :アドレス %>
   <%= 
       form.text_field :addresss,
       class: "form-control"
@@ -44,5 +44,5 @@
 </div>
 
 </br>
-  <%= form.submit  class: "btn btn-primary mr-3", value: '保存' %>
+  <%= form.submit  class: "btn btn-primary mr-3", value: '保存', style:"width: 100px; margin-bottom:10px; margin-left:10px" %>
 <% end %>
